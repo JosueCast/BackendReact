@@ -2833,11 +2833,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\temporal\\temporal.csproj",
+      "projectUniqueName": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\temporal\\temporal.csproj",
       "projectName": "temporal",
-      "projectPath": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\temporal\\temporal.csproj",
+      "projectPath": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\temporal\\temporal.csproj",
       "packagesPath": "C:\\Users\\darks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\temporal\\obj\\",
+      "outputPath": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\temporal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2858,8 +2858,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\darks\\source\\repos\\NotasProyecto\\reactBackend\\reactBackend.csproj": {
-              "projectPath": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\reactBackend\\reactBackend.csproj"
+            "C:\\Users\\darks\\Source\\Repos\\BackendReact\\reactBackend\\reactBackend.csproj": {
+              "projectPath": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\reactBackend\\reactBackend.csproj"
             }
           }
         }

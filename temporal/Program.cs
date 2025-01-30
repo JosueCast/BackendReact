@@ -48,6 +48,6 @@ Console.WriteLine(resultado2);
 #region borrar 
 
 var result = alumnoDAO.delete(18);
-Console.WriteLine("se eliminio " +result);
+Console.WriteLine("se eliminio el usuario " +result);
 
 #endregion

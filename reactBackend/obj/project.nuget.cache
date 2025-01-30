@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HKynUkcKJgG80Tp6+nMkwDyrMy+DFT8q5XdjzU081CHsO659zH4u41lEvQFvlr5WPjIy7b8gZbpw/4MiZLlvpw==",
+  "dgSpecHash": "RYi1C9Ta8IUhHgUpUUSENliUcUibrX5StsK1Y66Cnofb0g+T59cWl5iw+2LK0jBkA6KYLvUQDK35jPha/bhFxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\reactBackend\\reactBackend.csproj",
+  "projectFilePath": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\reactBackend\\reactBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darks\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\darks\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

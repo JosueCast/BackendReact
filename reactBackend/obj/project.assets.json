@@ -4741,11 +4741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\reactBackend\\reactBackend.csproj",
+      "projectUniqueName": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\reactBackend\\reactBackend.csproj",
       "projectName": "reactBackend",
-      "projectPath": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\reactBackend\\reactBackend.csproj",
+      "projectPath": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\reactBackend\\reactBackend.csproj",
       "packagesPath": "C:\\Users\\darks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darks\\source\\repos\\NotasProyecto\\reactBackend\\obj\\",
+      "outputPath": "C:\\Users\\darks\\Source\\Repos\\BackendReact\\reactBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
