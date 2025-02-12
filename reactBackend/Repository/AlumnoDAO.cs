@@ -188,5 +188,52 @@ namespace reactBackend.Repository
         #endregion
 
 
+
+        public Alumno? GetByIdAlumno(int id)
+        {
+            var alumno = context.Alumnos.Where(x => x.Id == id).FirstOrDefault();
+            return alumno == null ? null : alumno;
+        }
+
+
+        #region update alumno 
+
+        public bool updateAlumno(int id, Alumno actualizar)
+        {
+            try
+            {
+                var alumnoUpdate = GetById(id);
+
+                if (alumnoUpdate == null)
+                {
+                    Console.WriteLine("Alumno es null");
+                    return false;
+                }
+                //AGREGAR CAMPO QUE SE PUEDAN ACTUALIZAR O VALIDAR GG FUTURA UPDATE
+                alumnoUpdate.Direccion = actualizar.Direccion;
+                alumnoUpdate.Dni = actualizar.Dni;
+                alumnoUpdate.Nombre = actualizar.Nombre;
+                alumnoUpdate.Email = actualizar.Email;
+                alumnoUpdate.Edad = actualizar.Edad;
+
+                context.Alumnos.Update(alumnoUpdate);
+                context.SaveChanges();
+                return true;
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Error al actualizar el alumno: {e.Message}");
+                if (e.InnerException != null)
+                {
+                    Console.WriteLine($"Detalles: {e.InnerException.Message}");
+                }
+                return false;
+            }
+        }
+
+
+        #endregion
     }
 }
