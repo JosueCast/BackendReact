@@ -322,5 +322,46 @@ namespace reactBackend.Repository
         }
         #endregion
 
+
+        public bool eliminarAlumno(int id)
+        {
+            try
+            {
+                // Buscar al alumno
+                var alumno = context.Alumnos.FirstOrDefault(x => x.Id == id);
+                if (alumno != null)
+                {
+                    // Cargar matrículas en memoria
+                    var matriculaA = context.Matriculas.Where(x => x.AlumnoId == id).ToList(); // ✅ Ejecuta la consulta aquí
+
+                    // Eliminar calificaciones asociadas
+                    foreach (var m in matriculaA)
+                    {
+                        var calificaciones = context.Calificacions.Where(x => x.MatriculaId == m.Id).ToList(); // ✅ Convertir en lista
+                        context.Calificacions.RemoveRange(calificaciones);
+                    }
+
+                    // Eliminar matrículas
+                    context.Matriculas.RemoveRange(matriculaA);
+                    context.Alumnos.Remove(alumno);
+                    context.SaveChanges();
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Alumno no encontrado");
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{ex.Message}");
+                return false;
+            }
+
+        }
+
+
+
     }
 }

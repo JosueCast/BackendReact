@@ -56,7 +56,18 @@ namespace WebApi.Controllers
 
         #endregion
 
+        #region deleteAlumno
+        //crearenis el enunciado del metodo http
+        [HttpDelete("alumno")]
+        //se puede utiliza la sobrecarga con la url al ser diferente el metodo http
+        public bool eliminarAlumno(int id)
+        {
+            //metodo que vamos a crear
+            return _dao.eliminarAlumno(id);
+        }
 
+
+        #endregion
 
     }
 }
