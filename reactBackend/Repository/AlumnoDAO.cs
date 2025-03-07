@@ -235,5 +235,92 @@ namespace reactBackend.Repository
 
 
         #endregion
+
+
+
+        #region SelccionarPorDni
+        /// <summary>
+        /// Este metodo devolvera null si no exiate el DNI indicado, recibe un alumno y apartir de el se extrae el DNI se devuelve el estudiandiante en caso de exito
+        /// </summary>
+        /// <param name="alumno"> es de tipo Alumno </param>
+        /// <returns> Alumno </returns>
+
+        public Alumno DNIAlumno(Alumno alumno)
+        {
+            var alumnos = context.Alumnos.Where(x => x.Dni == alumno.Dni).FirstOrDefault();
+            return alumnos == null ? null : alumnos;
+        }
+        #endregion
+        #region AlumnoMatricula
+        public bool InsartarMatricula(Alumno alumno, int idAsing)
+        {
+            // se utiliza  un bloque con el cual  detectaremos las exepciones que nos pueda dar la inserccion 
+            try
+            {
+
+                //comprobar si existe el DNI en los alumnos
+                var alumnoDNI = DNIAlumno(alumno);
+                //si existe solo lo añadimos pero si no lo debemos de insertar
+                if (alumnoDNI == null)
+                {
+                    insertarAlumno(alumno);
+                    // si en null creamos el alumno pero ahora debemos de matricular el alumno con el Dni que corresponda
+                    var alumnoInsertado = DNIAlumno(alumno);
+                    // ahora debemos crear un objeto matricula para poder hacer la insercion de ambas llaves
+                    var unirAlumnoMatricula = matriculaAsignaturaALumno(alumno, idAsing);
+                    if (unirAlumnoMatricula == false)
+                    {
+                        return false;
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    matriculaAsignaturaALumno(alumnoDNI, idAsing);
+                    return true;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        #endregion
+
+        #region Matriucla
+        /// <summary>
+        /// Relaciona el Id del alumno con el ID de la matricula 
+        /// se definel el id de la asignatura
+        /// Para ello el metodo crea una instancia de Matricula he inicializa los campos idAlumno e id Asignatura
+        /// si el registro se guarda  devuelve true de lo contrario False
+        /// </summary>
+        /// <param name="alumno"></param>
+        /// <param name="idAsignatura"></param>
+        /// <returns>  bool</returns>
+        public bool matriculaAsignaturaALumno(Alumno alumno, int idAsignatura)
+        {
+            try
+            {
+                Matricula matricula = new Matricula();
+                //usaremos los campos AlumnoId y asignaturaId
+                matricula.AlumnoId = alumno.Id;
+                matricula.AsignaturaId = idAsignatura;
+                // Guardamos el cambio que se realizo al momento de insertar.
+                context.Matriculas.Add(matricula);
+                context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        #endregion
+
     }
 }

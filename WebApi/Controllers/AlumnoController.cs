@@ -40,7 +40,23 @@ namespace WebApi.Controllers
             return _dao.updateAlumno(alumno.Id, alumno);
 
         }
+        #endregion
+
+        #region AlumnoMatricula
+        //cuando queremos crear un nuevi registro se debe utiliar un metodo post
+        //lo llamaremos alumno aunque se llame igual la direcion se sobre escibe el metodo http
+
+        [HttpPost("alumno")]
+        //para insertar el alumno vamos a nesecitar todos los datos del alumno lo sobtendremos el body 
+        //[fromBody] Objecto nombre_objecto
+        public bool insertarMatricula([FromBody] Alumno alumno, int idAsignatura)
+        {
+            return _dao.InsartarMatricula(alumno, idAsignatura);
+        }
 
         #endregion
+
+
+
     }
 }
